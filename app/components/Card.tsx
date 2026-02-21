@@ -4,6 +4,8 @@ import { deletePost } from '@/action/action'
 import Link from 'next/link'
 import UpdateProduitModal from './UpdateProduitModal'
 import { RiDeleteBin5Fill } from "react-icons/ri"
+import { BsFillEyeFill } from 'react-icons/bs'
+import DeleteProduct from './DeleteProduct'
 
 interface ProductProps {
   id: string
@@ -13,13 +15,7 @@ interface ProductProps {
 }
 
 const Card = ({ id, name, price, stock }: ProductProps) => {
-  const [isPending, startTransition] = useTransition()
-
-  function handleDelete() {
-    startTransition(async () => {
-      await deletePost(id)
-    })
-  }
+  
 
   return (
     <div className="
@@ -35,11 +31,11 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
     ">
       
      
-      <div className="space-y-1">
-        <h3 className="text-lg font-semibold text-zinc-800 dark:text-white line-clamp-1">
+      <div className="space-y-2">
+        <h3 className="text-lg font-semibold text-zinc-800 dark:text-white line-clamp-1 py-2 border-b-2">
           {name}
         </h3>
-        <p className="text-2xl font-bold text-blue-600">
+        <p className="text-2xl font-bold text-blue-400">
           {price} Ar
         </p>
       </div>
@@ -48,7 +44,7 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
       <div>
         <span className={`
           text-xs px-3 py-1 rounded-full font-medium
-          ${stock > 0
+          ${stock > 5
             ? 'bg-emerald-100 text-emerald-700'
             : 'bg-red-100 text-red-600'}
         `}>
@@ -61,35 +57,27 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
         <Link
           href={`/Post/${id}`}
           className="
-            text-sm font-medium
+            text-sm 
             px-4 py-2
             rounded-lg
-            bg-blue-600 text-white
-            hover:bg-blue-700
+            bg-gray-400 text-white
+            hover:  bg-gray-300  
             transition
+            flex
+            items-center
+            gap-2
+            font-semibold
           "
         >
-          Voir plus
+          <BsFillEyeFill />
+          <span>Voir plus</span>
+          
         </Link>
 
-        <button
-          onClick={handleDelete}
-          disabled={isPending}
-          className="
-            flex items-center gap-2
-            px-3 py-2
-            text-sm
-            bg-red-500 hover:bg-red-600
-            text-white
-            rounded-lg
-            disabled:opacity-50
-            transition
-          "
-        >
-          <RiDeleteBin5Fill />
-          {isPending ? '...' : ''}
-        </button>
+        
       </div>
+      <div className='flex flex-row gap-5'>
+       
 
      
       <UpdateProduitModal
@@ -98,7 +86,14 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
         currentPrice={price}
         cuurrentStock={stock}
       />
+      <DeleteProduct id={id}/>
     </div>
+     
+
+
+
+      </div>
+      
   )
 }
 

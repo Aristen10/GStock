@@ -9,8 +9,8 @@ export default function DashboardLayout() {
   return (
     <div className="space-y-6 gap-4"  >
     
-      <div>
-        <Link href="/" className="flex items-center gap-2 border w-fit px-3 py-1 rounded-sm">
+      <div className="space-y-3">
+        <Link href="/" className="flex items-center gap-2 border w-fit px-3 py-1 rounded-md">
             <FaArrowLeft />
             <span>retour au Menu</span>
       </Link>
