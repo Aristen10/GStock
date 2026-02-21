@@ -34,7 +34,7 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
       flex flex-col gap-4
     ">
       
-      {/* Header */}
+     
       <div className="space-y-1">
         <h3 className="text-lg font-semibold text-zinc-800 dark:text-white line-clamp-1">
           {name}
@@ -44,7 +44,7 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
         </p>
       </div>
 
-      {/* Stock badge */}
+     
       <div>
         <span className={`
           text-xs px-3 py-1 rounded-full font-medium
@@ -56,7 +56,7 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
         </span>
       </div>
 
-      {/* Actions */}
+    
       <div className="flex items-center justify-between mt-auto">
         <Link
           href={`/Post/${id}`}
@@ -91,7 +91,7 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
         </button>
       </div>
 
-      {/* Update modal */}
+     
       <UpdateProduitModal
         id={id}
         currentName={name}
