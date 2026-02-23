@@ -113,7 +113,7 @@ export default function UpdateProduitModal({ id, currentName, currentPrice,cuurr
                 <button
                   type='submit'
                   disabled={isPending}
-                  className='flex-1 py-2 bg-blue-600 '
+                  className='flex-1 py-2 bg-blue-600 rounded-xl'
                 >
                   {isPending ? 'Sauvegarde...' : 'Confirmer'}
                 </button>

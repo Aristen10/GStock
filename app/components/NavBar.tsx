@@ -8,13 +8,13 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-30 bg-white shadow-sm border-b">
+    <header className="fixed top-0 left-0 right-0 z-30 bg-white shadow-sm border-b rounded-bl-md rounded-br-md">
       <div className="mx-6 sm:mx-12 flex items-center justify-between py-4">
 
         
         <Link href="/" className="flex items-center space-x-2">
-          <Package className="w-6 h-6 text-blue-600" />
-          <span className="text-xl font-semibold text-gray-800">
+          <Package className="w-8 h-8 text-blue-600" />
+          <span className="text-2xl font-semibold text-gray-800">
            GStock
           </span>
         </Link>
@@ -22,22 +22,22 @@ export default function Navbar() {
         
         <nav className="hidden md:flex items-center space-x-8 text-gray-600 font-medium">
 
-          <Link href="/dashboard" className="flex items-center gap-2 hover:text-blue-600 transition">
+          <Link href="/dashboard" className="flex items-center gap-2 hover:text-blue-600 transition hover:translate-y-1">
             <LayoutDashboard size={18} />
             Dashboard
           </Link>
 
-          <Link href="/Produits" className="flex items-center gap-2 hover:text-blue-600 transition">
+          <Link href="/Produits" className="flex items-center gap-2 hover:text-blue-600 transition hover:translate-y-1">
             <Package size={18} />
             Produits
           </Link>
 
-          <Link href="/commandes" className="flex items-center gap-2 hover:text-blue-600 transition">
+          <Link href="/commandes" className="flex items-center gap-2 hover:text-blue-600 transition hover:translate-y-1">
             <ShoppingCart size={18} />
             Commandes
           </Link>
 
-          <Link href="/parametres" className="flex items-center gap-2 hover:text-blue-600 transition">
+          <Link href="/parametres" className="flex items-center gap-2 hover:text-blue-600 transition hover:translate-y-1">
             <Settings size={18} />
             Paramètres
           </Link>

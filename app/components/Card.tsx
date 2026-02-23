@@ -32,7 +32,7 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
       
      
       <div className="space-y-2">
-        <h3 className="text-lg font-semibold text-zinc-800 dark:text-white line-clamp-1 py-2 border-b-2">
+        <h3 className="text-2xl font-semibold text-zinc-800 dark:text-white line-clamp-1 py-2 border-b-2">
           {name}
         </h3>
         <p className="text-2xl font-bold text-blue-400">
@@ -43,7 +43,7 @@ const Card = ({ id, name, price, stock }: ProductProps) => {
      
       <div>
         <span className={`
-          text-xs px-3 py-1 rounded-full font-medium
+          text-sm px-3 py-1 rounded-full font-sans
           ${stock > 5
             ? 'bg-emerald-100 text-emerald-700'
             : 'bg-red-100 text-red-600'}
